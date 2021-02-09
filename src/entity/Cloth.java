@@ -20,15 +20,9 @@ public class Cloth extends Product {
 
     @Override
     public String toString() {
-        return "Cloth{" +
+        return super.toString() + "Cloth{" +
                 "size='" + size + '\'' +
                 ", material='" + material + '\'' +
-                ", id=" + id +
-                ", productName='" + productName + '\'' +
-                ", price=" + price +
-                ", weight=" + weight +
-                ", color='" + color + '\'' +
-                ", productCount=" + productCount +
                 '}';
     }
 }
