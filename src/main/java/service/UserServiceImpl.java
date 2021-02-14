@@ -1,11 +1,12 @@
 package service;
 
+import api.UserService;
 import entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
     List<User> users;
 
     public UserServiceImpl(){
