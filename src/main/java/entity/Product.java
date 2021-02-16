@@ -1,12 +1,13 @@
 package entity;
 
 public class Product {
-    Long id;
-    String productName;
-    Float price;
-    Float weight;
-    String color;
-    Integer productCount;
+    private static final String PRODUCT_SEPARATOR = "#";
+    private Long id;
+    private String productName;
+    private Float price;
+    private Float weight;
+    private String color;
+    private Integer productCount;
 
     public Product(Long id, String productName, Float price, Float weight, String color, Integer productCount) {
         this.id = id;
@@ -51,13 +52,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", productName='" + productName + '\'' +
-                ", price=" + price +
-                ", weight=" + weight +
-                ", color='" + color + '\'' +
-                ", productCount=" + productCount +
-                '}';
+        return "P" + PRODUCT_SEPARATOR + id + PRODUCT_SEPARATOR + productName + PRODUCT_SEPARATOR + price + PRODUCT_SEPARATOR + weight + PRODUCT_SEPARATOR + color + PRODUCT_SEPARATOR + productCount;
     }
 }

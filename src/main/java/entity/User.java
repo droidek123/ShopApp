@@ -1,9 +1,10 @@
 package entity;
 
 public class User {
-    Long id;
-    String login;
-    String password;
+    private static final String PRODUCT_SEPARATOR = "#";
+    private Long id;
+    private String login;
+    private String password;
 
     public User(Long id, String login, String password) {
         this.id = id;
@@ -25,10 +26,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return "U" + PRODUCT_SEPARATOR + id + PRODUCT_SEPARATOR + login + PRODUCT_SEPARATOR + password;
     }
 }

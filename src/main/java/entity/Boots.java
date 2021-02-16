@@ -1,6 +1,7 @@
 package entity;
 
 public class Boots extends Product {
+    private static final String PRODUCT_SEPARATOR = "#";
     private Integer size;
     private boolean isNaturalSkin;
 
@@ -12,15 +13,6 @@ public class Boots extends Product {
 
     @Override
     public String toString() {
-        return "Boots{" +
-                "size=" + size +
-                ", isNaturalSkin=" + isNaturalSkin +
-                ", id=" + id +
-                ", productName='" + productName + '\'' +
-                ", price=" + price +
-                ", weight=" + weight +
-                ", color='" + color + '\'' +
-                ", productCount=" + productCount +
-                '}';
+        return "B"+ PRODUCT_SEPARATOR + super.toString() + PRODUCT_SEPARATOR + size + PRODUCT_SEPARATOR + isNaturalSkin;
     }
 }
