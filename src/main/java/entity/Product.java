@@ -52,6 +52,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "P" + PRODUCT_SEPARATOR + id + PRODUCT_SEPARATOR + productName + PRODUCT_SEPARATOR + price + PRODUCT_SEPARATOR + weight + PRODUCT_SEPARATOR + color + PRODUCT_SEPARATOR + productCount;
+        return "Product" + PRODUCT_SEPARATOR + id + PRODUCT_SEPARATOR + productName + PRODUCT_SEPARATOR + price + PRODUCT_SEPARATOR + weight + PRODUCT_SEPARATOR + color + PRODUCT_SEPARATOR + productCount;
     }
 }

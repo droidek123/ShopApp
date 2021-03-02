@@ -1,6 +1,8 @@
 package dao;
 
 import api.ProductDao;
+import entity.Boots;
+import entity.Cloth;
 import entity.Product;
 
 import java.io.*;
@@ -66,10 +68,16 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public List<Product> getAllProducts() throws IOException {
-        List<Product> products = new ArrayList<Product>();
+        List<Product> products = new ArrayList<>();
+        Product product;
         BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE_NAME));
-
-
+        String readOneLineFromFile = bufferedReader.readLine();
+        while (readOneLineFromFile != null){
+            product = parseStringToProduct(readOneLineFromFile);
+            products.add(product);
+            readOneLineFromFile = bufferedReader.readLine();
+        }
+        bufferedReader.close();
         return products;
     }
 
@@ -83,7 +91,48 @@ public class ProductDaoImpl implements ProductDao {
         return null;
     }
 
-    public void parseProductToString(){
+    public Product parseStringToProduct(String string){
+        String[] textProduct = string.split("#");
+        switch (textProduct[0]){
+            case "Boots":
+                return parseBoots(textProduct);
+            case "Cloth":
+                return parseCloth(textProduct);
+            case "Product":
+                return parseProduct(textProduct);
+            default:
+                return null;
+        }
+    }
 
+    public Product parseProduct(String[] boots){
+        return new Product(Long.parseLong(boots[1]),
+                boots[2],
+                Float.parseFloat(boots[3]),
+                Float.parseFloat(boots[4]),
+                boots[5],
+                Integer.parseInt(boots[6]));
+    }
+
+    public Boots parseBoots(String[] boots){
+        return new Boots(Long.parseLong(boots[1]),
+               boots[2],
+               Float.parseFloat(boots[3]),
+               Float.parseFloat(boots[4]),
+               boots[5],
+               Integer.parseInt(boots[6]),
+               Integer.parseInt(boots[7]),
+               Boolean.parseBoolean(boots[8]));
+    }
+
+    public Cloth parseCloth(String[] boots){
+        return new Cloth(Long.parseLong(boots[1]),
+                boots[2],
+                Float.parseFloat(boots[3]),
+                Float.parseFloat(boots[4]),
+                boots[5],
+                Integer.parseInt(boots[6]),
+                boots[7],
+                boots[8]);
     }
 }

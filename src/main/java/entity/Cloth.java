@@ -21,6 +21,6 @@ public class Cloth extends Product {
 
     @Override
     public String toString() {
-        return "C" + PRODUCT_SEPARATOR + super.toString() + PRODUCT_SEPARATOR + size + PRODUCT_SEPARATOR + material;
+        return "Cloth" + PRODUCT_SEPARATOR + super.toString() + PRODUCT_SEPARATOR + size + PRODUCT_SEPARATOR + material;
     }
 }
